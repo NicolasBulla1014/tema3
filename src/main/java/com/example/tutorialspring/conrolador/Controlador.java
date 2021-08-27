@@ -55,9 +55,9 @@ public class Controlador {
 	 }
 	
 	//Metodo para insertar Trabajadores a la Base de datos
-	@PostMapping("/add/{id}")
-	public Trabajador createTrabajador( @PathVariable("id") Integer id ,@RequestBody Trabajador trabajador) {
-		trabajador.setIdtrabajador(id);
+	@PostMapping("/add")
+	public Trabajador createTrabajador(@RequestBody Trabajador trabajador) {
+		trabajador.setIdtrabajador(0);
 		 trabajadorDao.save(trabajador);
 		 return trabajador;
 	}
